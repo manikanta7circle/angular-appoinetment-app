@@ -1,0 +1,31 @@
+<div class="app-container">
+    <div class="responsive-container">
+        <div class="appointments-container">
+            <div class="add-appointment-container">
+                <form  class="form" (ngSubmit)="addAppointment($event)">
+                    <h1 class="add-appointment-heading"> Add Appointment </h1>
+                    <label class="label">Title</label>
+                    <input class="input" type="text" id="title" (input)="onChangeTitleInput($event)" [value]="titleInput"/>
+                    <label class="label">Date</label>
+                    <input class="input" type="date" id="date" (input)="onChangeDateInput($event)" [value]="dateInput" />
+                    <button type="submit" class="add-button" (click)="onClickStarred()">
+                        Add
+                    </button>
+                </form>
+                <img
+                src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
+                alt="appointments"
+                className="appointments-img"
+              />
+            </div>
+            <hr class="hr"/>
+            <div class="header-with-filter-container">
+                <h1 class="appointments-heading">Appointments</h1>
+                <button type="button" [class]="filterClassName" (click)="onClickStarred()">Starred</button>
+            </div>
+                <ul class="appointments-list">
+                    <app-appointment-item *ngFor="let appointment of filteredAppointmentList" [appointmentDetail]="appointment" (toggleIsStarred)="onToggleisStarred($event)"></app-appointment-item>
+                </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<li class="appointment-item">
+    <div class="header-container">
+        <p class="title">{{appointmentDetail.title}}</p>
+        <button type="button" class="star-button" (click)="onClickStar()">
+            <img [src]="starImgUrl" className="star" alt="star"  />
+        </button>
+    </div>
+    <p className="date">Date: {{appointmentDetail.date}}</p>
+</li>
